@@ -11,7 +11,7 @@ Lernspiel für Java und IT-Sicherheit aus zwei Sichten
 
 ## Beschreibung
 
-Link zum Projekt: https://github.com/users/MarcoDaquila/projects/3/views/1
+Link zum Projekt-Board: https://github.com/users/MarcoDaquila/projects/3/views/1
 
 Als Team von **FMLD-Studios** werden wir das Lernspiel **Cyber Defenders** entwickeln. Dabei wird ein virtueller Escape Room mit einem Detektiv- und Rätselspiel kombiniert. 
 Die Nutzer lernen darin spielerisch fortgeschrittene Java-Programmierung und grundlegende Prinzipien der IT-Sicherheit.
