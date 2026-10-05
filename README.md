@@ -23,7 +23,7 @@ Vor dem Start wählen die Spieler eine Rolle (Cyber-Defender oder White-Hat-Hack
 
 * Frontend: Angular (TypeScript), Tailwind CSS
 * Backend: TypeScript mit Express
-* Datenbank: Supabase (PostgreSQL)
+* Datenbank: Neon (PostgreSQL)
 
 ## Lokal starten
 
