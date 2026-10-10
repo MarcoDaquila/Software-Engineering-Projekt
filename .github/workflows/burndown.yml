@@ -1,0 +1,35 @@
+name: Burndown
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # taeglich 21:00 UTC (23:00 Sommerzeit, 22:00 Winterzeit)
+  workflow_dispatch:        # manuell startbar im Tab Actions
+
+permissions:
+  contents: write
+
+jobs:
+  burndown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install matplotlib
+
+      - name: Burndown aus Board-Daten erzeugen
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+        run: |
+          mkdir -p docs/burndown
+          python burndown.py --owner MarcoDaquila --project 3 --sprint current --out docs/burndown/burndown.png
+
+      - name: Ergebnis committen
+        run: |
+          git config user.name "burndown-bot"
+          git config user.email "burndown-bot@users.noreply.github.com"
+          git add docs/burndown
+          git diff --cached --quiet || (git commit -m "Burndown aktualisiert" && git push)
